@@ -104,11 +104,11 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
  printf("Scanning I2C bus...\n");
-  for(uint8_t addr = 1; addr < 127; addr++)
+  for(uint8_t addr = 1; addr < 127; addr++) //Read the address of I2C devices connected
   {
     if(HAL_I2C_IsDeviceReady(&hi2c2, addr << 1, 1, 10) == HAL_OK)
     {
-      printf("Device found at 0x%02X\n", addr);
+      printf("Device found at 0x%02X\n", addr); //0x40 and 0x41 in this case
     }
   }
 
